@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "io.github.abduznik.foreman.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"FishingHookAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

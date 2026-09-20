@@ -15,7 +15,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"foreman" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

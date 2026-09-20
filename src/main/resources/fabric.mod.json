@@ -1,31 +1,28 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "foreman",
 	"version": "${version}",
-	"name": "Example Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Foreman",
+	"description": "Survival-legal planning and instrumentation tools: exact material lists for terraforming, and a bite indicator that finally makes the fishing bobber visible in the dark. Foreman never places, breaks, mines, or reveals anything you couldn't already see yourself — it just computes and shows.",
 	"authors": [
-		"Me!"
+		"abduznik"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/abduznik/foreman",
+		"sources": "https://github.com/abduznik/foreman",
+		"issues": "https://github.com/abduznik/foreman/issues"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
-	"environment": "*",
+	"icon": "assets/foreman/icon.png",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"com.example.ExampleMod"
-		],
 		"client": [
-			"com.example.client.ExampleModClient"
+			"io.github.abduznik.foreman.client.ForemanClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "foreman.client.mixins.json",
 			"environment": "client"
 		}
 	],

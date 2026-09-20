@@ -1,0 +1,7 @@
+{
+	"key.category.foreman.terraform": "Foreman — Terraform",
+	"key.foreman.set_pos_a": "Set Position 1",
+	"key.foreman.set_pos_b": "Set Position 2",
+	"key.foreman.scan": "Scan Selection",
+	"key.foreman.clear_selection": "Clear Selection"
+}
