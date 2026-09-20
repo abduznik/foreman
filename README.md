@@ -19,6 +19,9 @@ The Fabric mod ecosystem has redstone visualizers, auto-harvest bots, instant-ed
 ### Fishing bobber bite marker (v1, on by default)
 Vanilla's fishing bite cue is a small ripple animation that's genuinely hard to see at night, underground, or across a lake. Foreman watches the bobber's real bite state (the same flag the game itself uses to trigger the splash) and floats a marker above it that switches color the instant a fish bites — readable through walls, in the dark, from across the water. No mod currently does this despite it being a long-standing, widely-known player complaint.
 
+![Fishing with the bobber cast out](images/fishing-bite-marker.png)
+![Bobber pulled underwater during a bite](images/fishing-bobber-underwater.png)
+
 ### Terraform material calculator (v1)
 Select a region with two corners, WorldEdit-style — selection only, no editing. A translucent wireframe box marks the active selection in the world. Foreman scans the **real block data** in that region and reports an exact material list (broken down by block type, converted into stacks and shulker-box counts), with player-configurable filters for air, water, and bedrock. Selections persist per world/server, so re-joining doesn't force a re-select. Know exactly what to bring — or what you're about to haul away — before you swing a single tool.
 
