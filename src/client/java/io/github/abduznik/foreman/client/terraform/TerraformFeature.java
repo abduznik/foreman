@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import io.github.abduznik.foreman.client.ForemanClient;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -44,6 +45,10 @@ public final class TerraformFeature {
 
 		ClientTickEvents.END_CLIENT_TICK.register(TerraformFeature::onClientTick);
 		SelectionRenderer.init(SELECTION);
+
+		SelectionStorage.load();
+		ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> SelectionStorage.restore(SELECTION));
+		ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> SELECTION.clear());
 	}
 
 	private static void onClientTick(Minecraft client) {
@@ -51,6 +56,7 @@ public final class TerraformFeature {
 			targetedBlockPos(client).ifPresentOrElse(
 					pos -> {
 						SELECTION.setPosA(pos);
+						SelectionStorage.persist(SELECTION);
 						reportSelection(client, "Position 1 set", pos);
 					},
 					() -> warn(client, "Look at a block first")
@@ -61,6 +67,7 @@ public final class TerraformFeature {
 			targetedBlockPos(client).ifPresentOrElse(
 					pos -> {
 						SELECTION.setPosB(pos);
+						SelectionStorage.persist(SELECTION);
 						reportSelection(client, "Position 2 set", pos);
 					},
 					() -> warn(client, "Look at a block first")
@@ -69,6 +76,7 @@ public final class TerraformFeature {
 
 		while (clearKey.consumeClick()) {
 			SELECTION.clear();
+			SelectionStorage.persist(SELECTION);
 			if (client.player != null) {
 				client.player.sendSystemMessage(Component.literal("[Foreman] Selection cleared"));
 			}
