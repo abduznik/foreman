@@ -8,6 +8,8 @@ If you've ever wanted a **Minecraft fishing bite indicator** that's actually vis
 
 The Fabric mod ecosystem has redstone visualizers, auto-harvest bots, instant-edit terraforming brushes, and loot trackers — often several of each, some with millions of downloads. What's missing is **survival-legal planning and instrumentation**: tools that make the vanilla game more readable without changing how it's played. Foreman fills that specific gap.
 
+*(The name comes from the trade, not the diagnostician — though Dr. Foreman would probably back a tool that runs the numbers before anyone touches anything.)*
+
 **The rule that defines every feature:** Foreman computes and shows. You still swing the pickaxe, place the water, and reel in the rod by hand.
 
 ## Features

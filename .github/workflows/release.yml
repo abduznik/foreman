@@ -1,0 +1,37 @@
+# Publishes a tagged release (e.g. v0.1.0) to Modrinth and creates a matching GitHub Release
+# with the built jar attached. Requires a MODRINTH_TOKEN repository secret and the Modrinth
+# project's id/slug filled in below once the project exists on Modrinth.
+
+name: release
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: "25"
+          distribution: "microsoft"
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build
+        run: ./gradlew build
+      - name: publish
+        uses: Kira-NT/mc-publish@v3
+        with:
+          modrinth-id: foreman
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          loaders: fabric
+          game-versions: 26.2
+          version-type: release
+          changelog-file: CHANGELOG.md
+          github-token: ${{ secrets.GITHUB_TOKEN }}

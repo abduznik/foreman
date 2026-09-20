@@ -7,6 +7,10 @@ import net.fabricmc.api.ClientModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Named after the trait, not the doctor — though Dr. Foreman would probably approve of a
+ * tool that insists on running the numbers before anyone touches anything.
+ */
 public class ForemanClient implements ClientModInitializer {
 	public static final String MOD_ID = "foreman";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
