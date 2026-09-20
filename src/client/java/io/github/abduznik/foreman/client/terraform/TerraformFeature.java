@@ -43,6 +43,7 @@ public final class TerraformFeature {
 				"key.foreman.clear_selection", InputConstants.Type.KEYSYM, -1, category));
 
 		ClientTickEvents.END_CLIENT_TICK.register(TerraformFeature::onClientTick);
+		SelectionRenderer.init(SELECTION);
 	}
 
 	private static void onClientTick(Minecraft client) {
