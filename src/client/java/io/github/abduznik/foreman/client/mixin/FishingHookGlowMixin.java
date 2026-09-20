@@ -17,7 +17,7 @@ public abstract class FishingHookGlowMixin {
 
 	@Inject(method = "isCurrentlyGlowing", at = @At("HEAD"), cancellable = true)
 	private void foreman$forceGlowWhenBiting(CallbackInfoReturnable<Boolean> cir) {
-		if (!ForemanConfig.data.fishingGlowEnabled || !ForemanConfig.data.fishingGlowThroughWalls) {
+		if (!ForemanConfig.data.fishingGlowEnabled) {
 			return;
 		}
 

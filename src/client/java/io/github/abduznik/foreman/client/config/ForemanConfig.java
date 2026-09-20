@@ -28,8 +28,6 @@ public final class ForemanConfig {
 	public static class Data {
 		// Fishing
 		public boolean fishingGlowEnabled = true;
-		public String fishingGlowColor = "FFE066";
-		public boolean fishingGlowThroughWalls = true;
 
 		// Terraform
 		public boolean terraformIgnoreAir = true;
