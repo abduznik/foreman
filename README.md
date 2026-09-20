@@ -4,6 +4,8 @@
 
 If you've ever wanted a **Minecraft fishing bite indicator** that's actually visible in a dark cave, or a **WorldEdit-style material calculator** that reads your real world instead of making you type dimensions into a website, this is that mod.
 
+![Terraform selection and material scan](images/terraform-selection-scan.png)
+
 ## Why Foreman exists
 
 The Fabric mod ecosystem has redstone visualizers, auto-harvest bots, instant-edit terraforming brushes, and loot trackers — often several of each, some with millions of downloads. What's missing is **survival-legal planning and instrumentation**: tools that make the vanilla game more readable without changing how it's played. Foreman fills that specific gap.
@@ -29,7 +31,7 @@ Optimal water spacing, tilled-area shape, and collection-point placement for a t
 ## Requirements
 
 - Minecraft **26.2**
-- Fabric Loader **0.19.5+**
+- Fabric Loader **0.19.3+**
 - Fabric API
 - Java **25+**
 
