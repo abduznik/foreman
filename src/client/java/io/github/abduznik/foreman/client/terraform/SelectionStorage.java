@@ -3,6 +3,7 @@ package io.github.abduznik.foreman.client.terraform;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.github.abduznik.foreman.client.ForemanClient;
+import io.github.abduznik.foreman.client.mixin.MinecraftServerAccessor;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
@@ -108,7 +109,8 @@ public final class SelectionStorage {
 		}
 
 		if (client.getSingleplayerServer() != null) {
-			return "world:" + client.getSingleplayerServer().getWorldData().getLevelName();
+			MinecraftServerAccessor accessor = (MinecraftServerAccessor) client.getSingleplayerServer();
+			return "world:" + accessor.foreman$storageSource().getLevelId();
 		}
 
 		return null;
